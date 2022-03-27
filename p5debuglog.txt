@@ -1,1 +1,230 @@
+gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x913: file p5final.c, line 40.
+(gdb) r
+Starting program: /home/runner/Test3Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5final.c:40
+40  {
+(gdb) n
+42    x=input_size();
+(gdb) s
+input_size () at p5final.c:3
+3   { 
+(gdb) n
+5     printf("Enter the size\n");
+(gdb) n
+Enter the size
+6     scanf("%d",&n);
+(gdb) n
+5
+7     return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:43
+43    int a[x];
+(gdb) n
+44    input_array(x,a);
+(gdb) s
+input_array (n=5, a=0x7ffe2dc9e140) at p5final.c:11
+11    printf("Enter the numbers\n");
+(gdb) n
+Enter the numbers
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+1 5 4 21 33
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+16  }
+(gdb) n
+main () at p5final.c:45
+45    y=find_largest(x,a);
+(gdb) n
+46    output(x,a,y);
+(gdb) s
+output (n=5, a=0x7ffe2dc9e140, largest=4) at p5final.c:32
+32    printf("The index of the largest number among [");
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+ pwd
+/home/runner/Test3Session2-2
+ gcc -g p5final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x913: file p5final.c, line 40.
+(gdb) r
+Starting program: /home/runner/Test3Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:40
+40  {
+(gdb) n
+42    x=input_size();
+(gdb) n
+Enter the size
+5
+43    int a[x];
+(gdb) n
+44    input_array(x,a);
+(gdb) s
+input_array (n=5, a=0x7ffe7ef6a850) at p5final.c:11
+11    printf("Enter the numbers\n");
+(gdb) n
+Enter the numbers
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+1 10 21 33 12
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+14        scanf("%d",&a[i]);
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) n
+16  }
+(gdb) n
+main () at p5final.c:45
+45    y=find_largest(x,a);
+(gdb) s
+find_largest (n=5, a=0x7ffe7ef6a850) at p5final.c:19
+19   int lar=a[0],id=0;
+(gdb) n
+20   for(int i=1;i<n;i++)
+(gdb) n
+22       if(lar<a[i])
+(gdb) n
+24         lar=a[i];
+(gdb) n
+25         id=i;
+(gdb) n
+20   for(int i=1;i<n;i++)
+(gdb) n
+22       if(lar<a[i])
+(gdb) n
+24         lar=a[i];
+(gdb) n
+25         id=i;
+(gdb) n
+20   for(int i=1;i<n;i++)
+(gdb) n
+22       if(lar<a[i])
+(gdb) n
+24         lar=a[i];
+(gdb) n
+25         id=i;
+(gdb) n
+20   for(int i=1;i<n;i++)
+(gdb) n
+22       if(lar<a[i])
+(gdb) n
+20   for(int i=1;i<n;i++)
+(gdb) n
+28    return id;
+(gdb) n
+29  }
+(gdb) n
+main () at p5final.c:46
+46    output(x,a,y);
+(gdb) s
+output (n=5, a=0x7ffe7ef6a850, largest=3) at p5final.c:32
+32    printf("The index of the largest number among [");
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+35        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0;i<n;i++)
+(gdb) n
+37    printf("]is %d",largest);
+(gdb) n
+38  }
+(gdb) n
+main () at p5final.c:47
+47    return 0;
+(gdb) n
+48  }(gdb) c
+Continuing.
+The index of the largest number among [1 10 21 33 12 ]is 3[Inferior 1 (process 1653) exited normally]
+(gdb) q

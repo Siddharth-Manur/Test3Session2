@@ -1,1 +1,99 @@
+gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9e7: file p8final.c, line 69.
+(gdb) r
+Starting program: /home/runner/Test3Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p8final.c:69
+69  {
+(gdb) n
+71    n=input_n();
+(gdb) s
+input_n () at p8final.c:19
+19  {
+(gdb) n
+21    printf("enter no.of fractions\n");
+(gdb) n
+enter no.of fractions
+22    scanf("%d",&n);
+(gdb) n
+3
+23    return n;
+(gdb) n
+24  }
+(gdb) n
+main () at p8final.c:72
+72    Fraction f[n],sum;
+(gdb) s
+73    input_in_fractions(n,f);
+(gdb) n
+input a fraction
+1 4 
+input a fraction
+1 2
+input a fraction
+3 4
+74    sum=add_n_fractions(n,f);
+(gdb) s
+add_n_fractions (n=3, f=0x7ffeb7abf0a0) at p8final.c:52
+52    sum=f[0];
+(gdb) n
+53    for(int i=1;i<n;i++)
+(gdb) n
+55        sum=add_fractions(sum,f[i]);
+(gdb) n
+53    for(int i=1;i<n;i++)
+(gdb) n
+55        sum=add_fractions(sum,f[i]);
+(gdb) n
+53    for(int i=1;i<n;i++)
+(gdb) n
+57    return sum;
+(gdb) n
+58  }
+(gdb) n
+main () at p8final.c:75
+75    output(n,f,sum);
+(gdb) s
+output (n=3, f=0x7ffeb7abf0a0, sum=...) at p8final.c:61
+61    for (int i=0;i<n;i++)
+(gdb) n
+63        printf("%d/%d+",f[i].num,f[i].den);
+(gdb) n
+61    for (int i=0;i<n;i++)
+(gdb) n
+63        printf("%d/%d+",f[i].num,f[i].den);
+(gdb) n
+61    for (int i=0;i<n;i++)
+(gdb) n
+63        printf("%d/%d+",f[i].num,f[i].den);
+(gdb) n
+61    for (int i=0;i<n;i++)
+(gdb) n
+66    printf(" =%d/%d",sum.num,sum.den);
+(gdb) n
+67  }
+(gdb) n
+main () at p8final.c:76
+76    return 0;
+(gdb) n
+77  }(gdb) c
+Continuing.
+1/4+1/2+3/4+ =3/2[Inferior 1 (process 2346) exited normally]
+(gdb) q

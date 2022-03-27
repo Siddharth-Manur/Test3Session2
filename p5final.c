@@ -1,6 +1,7 @@
 #include<stdio.h>
 int input_size()
-{ int n;
+{ 
+  int n;
   printf("Enter the size\n");
   scanf("%d",&n);
   return n;
@@ -43,4 +44,5 @@ int main()
   input_array(x,a);
   y=find_largest(x,a);
   output(x,a,y);
+  return 0;
 }
